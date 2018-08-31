@@ -1,4 +1,3 @@
-from equilibrioQuimico import Mu
 from math import sqrt
 
 def calcularMomentoDeFermi(M, massa):
@@ -8,6 +7,13 @@ def calcularMomentoDeFermi(M, massa):
     else:
         return sqrt(resultado)
 
-def calcularTodosMomentosDeFermi(M, massa):
-    
-print(calcularMomentoDeFermi(Mu[0], 2))
+def calcularTodosMomentosDeFermi(Mu, massa):
+    kfQuarks = []
+    kfLeptons = []
+    for i in range(0,9):
+        if i < 6:
+             kfQuarks.append(calcularMomentoDeFermi(Mu[i], massa[i]))
+        else:
+           kfLeptons.append(calcularMomentoDeFermi(Mu[i], massa[i])) 
+    return kfQuarks, kfLeptons
+         

@@ -5,7 +5,7 @@ from scipy import integrate
 
 nQuarks = 2 
 sacola = 200 
-massa = [50, 100] 
+massa = [2.2,4.7,95,1275,4180,173000,0.511, 105.7, 1777]
 def calcularPressao(nQuarks, sacola, massa):
     resultado = 0
     pAuxiliar = 0
@@ -17,8 +17,15 @@ def calcularPressao(nQuarks, sacola, massa):
         p.append((1/(pi**2))*pAuxiliar-sacola)
         resultado = 0
         pAuxiliar = 0
-    return p
-    
+    return p 
+
+def calcularUnicaPressao(kf, massa, sacola):
+    resultado = integrate.quadrature(lambda k : (k**4)/(((k**2)+(massa**2))**(1/2)) , 0,kf)
+    return (1/(pi**2))*resultado[0]-sacola
+
+print(calcularUnicaPressao(4.48998886413, 2.2, sacola))
+
+
 
 
 def calcularDensidadeEnergia(nQuarks, sacola, massa):
@@ -48,4 +55,4 @@ def calcularDensidadeBaronica(nQuarks, sacola, massa):
         nAuxiliar = 0
     return n
 
-print(calcularDensidadeBaronica(nQuarks, sacola, massa))
+# print(calcularDensidadeBaronica(nQuarks, sacola, massa))
