@@ -17,3 +17,8 @@ def calcularTodosMomentosDeFermi(Mu, massa):
            kfLeptons.append(calcularMomentoDeFermi(Mu[i], massa[i])) 
     return kfQuarks, kfLeptons
          
+def calcularMomentosDeFermiEmUmArray(Mu, massa):
+    kf = []
+    for i in range(0,9):
+        kf.append(calcularMomentoDeFermi(Mu[i], massa[i]))
+    return kf
