@@ -12,4 +12,4 @@ def calcularDensidadeEnergia(numeroQuarks, numeroLeptons, kfQuarks, kfLeptons, m
     for j in range(0 , numeroLeptons):
         resultado = integrate.quadrature(lambda k : (k**2)*(((k**2) + (massaLeptons[j]**2))**(1/2)), 0,kfLeptons[j])
         densidadeAuxiliarL += resultado[0]
-    return (3/(pi**2))*densidadeAuxiliarQ+(1/(pi**2))*densidadeAuxiliarL+sacola
+    return ((3/(pi**2))*densidadeAuxiliarQ+(1/(pi**2))*densidadeAuxiliarL+(sacola**4))/197**4

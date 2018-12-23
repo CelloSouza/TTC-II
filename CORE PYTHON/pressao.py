@@ -12,4 +12,4 @@ def calcularPressao(numeroQuarks, numeroLeptons, kfQuarks, kfLeptons, massaQuark
     for j in range(0 , numeroLeptons):
         resultado = integrate.quadrature(lambda k : (k**4)/(((k**2)+(massaLeptons[j]**2))**(1/2)) , 0,kfLeptons[j])
         pressaoAuxiliarL += resultado[0]
-    return (1/(pi**2))*pressaoAuxiliarQ + (1/(3*pi**2))*pressaoAuxiliarL-sacola
+    return ((1/(pi**2))*pressaoAuxiliarQ + (1/(3*pi**2))*pressaoAuxiliarL-(sacola**4))/197**4

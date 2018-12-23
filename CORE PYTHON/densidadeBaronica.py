@@ -12,9 +12,9 @@ def calcularDensidadeBaronica(numeroQuarks, kfQuarks):
 
 
 def calcularDensidade(kf):
-    resultado = integrate.quadrature(lambda k : (k**2), 0, kf)
+    resultado = integrate.quadrature(lambda k : (k**2), 0, abs(kf))
     return ((1/(pi**2))*resultado[0])
 
 def calcularDensidadeLeptons(kf):
-    resultado = integrate.quadrature(lambda k : (k**2), 0, kf)
+    resultado = integrate.quadrature(lambda k : (k**2), 0, abs(kf))
     return ((1/(3*pi**2))*resultado[0])
